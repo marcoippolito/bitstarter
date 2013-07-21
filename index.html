@@ -40,6 +40,35 @@
         border-top: 1px white solid;
       }
      }
+
+
+
+.flex-video {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+ 
+.flex-video.widescreen { padding-bottom: 57.25%; }
+.flex-video.vimeo { padding-top: 0; }
+ 
+.flex-video iframe,
+.flex-video object,
+.flex-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+  .flex-video { padding-top: 0; }
+}
+
+
      
      /* All form factors */
   
@@ -142,7 +171,12 @@
       </div>
       <div class="row-fluid pitch">
         <div class="span5 offset1 video">
-          <img class="img-polaroid" src="http://placehold.it/480x300">                 </div>
+          <video id="Hi" width="480" height="300" preload controls>
+                 <source src="Hi.mov" type="video/mp4"; codecs="avc1.42E01E, mp4a.40.2" />
+                 <source src="Hi.mp4" type="video/mp4"; codecs="avc1.42E01E, mp4a.40.2" />
+          
+          </video>
+        </div>
       
 
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons, -->
@@ -215,7 +249,9 @@
            </p>
          </div>
          <div class="span5 asset">
-           <img class="img-polaroid" src="http://placehold.it/480x300">
+           <figure>
+             <img id="cropped-world-in-your-hands" src="/cropped-World-in-your-hands-2.jpg" alt="cropped world in your hands" width="480" height="300" /> 
+           </figure>
          </div>
        </div>
        <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
